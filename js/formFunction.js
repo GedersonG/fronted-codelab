@@ -9,6 +9,10 @@ form.addEventListener('submit', (e) => {
   
     fetch(`${API_URL}/codelabs/publicar`, {
       method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: formData
     })
     .then(async (response) => {
