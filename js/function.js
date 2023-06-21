@@ -7,10 +7,15 @@ const getCodelab = () => {
   fetch(`${API_URL}/codelabs/all`)
     .then(async (resp) => {
       const response = await resp.json();
+      console.log(JSON.stringify(response))
       if (resp.ok){
         response.data.forEach(data => {
-            let rate = 3;
-            codelab.innerHTML = `<div class="col-4">
+          let rate = data.calificacion;
+     
+          const stars = getStars(rate)
+          const noStars = getNoStars(5-rate)
+           
+            codelab.innerHTML += `<div class="col-3 me-2">
             <div class="card mb-3 mt-4">
               <h3 class="card-header">${data.titulo}</h3>
               <svg
@@ -39,8 +44,8 @@ const getCodelab = () => {
               </div>
               <div class="card-footer text-muted">
                 <div>
-                    ${new Array(rate).forEach( ()=> '<i class="fas fa-star"></i>' )}
-                    ${new Array(5-rate).forEach( ()=> '<i class="far fa-star"></i>' )}
+                    ${stars}
+                    ${noStars}
                 </div>
               </div>
             </div>
@@ -50,5 +55,31 @@ const getCodelab = () => {
 }})
     .catch((error) => code);
 };
+
+const getStars=(pnum)=>{
+  
+  const star = new Array(pnum)
+  console.log(star.length)
+  let htmlS = ""
+  for (let index = 0; index < star.length; index++) {
+    htmlS+= '<i class="fas fa-star"></i>'
+  }
+  
+  console.log("a",htmlS)
+  return htmlS
+}
+
+const getNoStars=(pnum)=>{
+  
+  const star = new Array(pnum)
+  console.log(star.length)
+  let htmlS = ""
+  for (let index = 0; index < star.length; index++) {
+    htmlS+= '<i class="far fa-star"></i>'
+  }
+  
+  console.log("a",htmlS)
+  return htmlS
+}
 
 getCodelab();

@@ -64,8 +64,12 @@
                 >Add codelab with zip <a href="">structure.</a></label
               >
               <div class="col text-center">
-                <input class="form-control" type="file" id="formFile" />
-                <button type="button" class="btn btn-success mt-2">Create my codelab</button>
+                <form id="miFormulario">
+                  <input type="file" name="file" accept=".zip" class="form-control" id="formFile">
+                  <button type="submit" class="btn btn-success mt-2">Create my codelab</button>
+                </form>
+
+                
               </div>
             </div>
           </div>
@@ -86,5 +90,6 @@
         </div>
       </div>
     </div>
+    <script src="../js/formFunction.js"></script>
   </body>
 </html>
