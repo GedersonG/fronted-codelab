@@ -39,7 +39,7 @@ const getCodelab = () => {
                 </p>
               </div>
               <div class="card-body">
-                <a href="#" class="card-link">Go codelab</a>
+                 <a href="/html/codelab.html?name=${data.filename}" class="card-link">Go codelab</a>
                 <a href="#" class="card-link">Edit codelab</a>
               </div>
               <div class="card-footer text-muted">
