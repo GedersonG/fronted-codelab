@@ -9,6 +9,7 @@ form.addEventListener('submit', (e) => {
   
     fetch(`${API_URL}/codelabs/publicar`, {
       method: 'POST',
+      
       body: formData
     })
     .then(async (response) => {
@@ -28,3 +29,11 @@ form.addEventListener('submit', (e) => {
       console.log('Error en la solicitud: ', error);
     });
   });
+
+
+  /**
+   * headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+   */

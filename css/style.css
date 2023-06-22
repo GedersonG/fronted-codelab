@@ -9,3 +9,18 @@
     justify-content: center;
     min-height: 100vh;
   }
+
+.pasar-boton{
+    height: fit-content;
+    align-self: center;
+}
+
+#contenido{
+    width: 20%;
+    align-self: center;
+}
+
+#codelab{
+    display: block;
+    text-align: left;
+}
